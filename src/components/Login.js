@@ -1,50 +1,53 @@
-import React from 'react'
-import { Box, Button, TextField, Typography } from '@mui/material'
-// import { blue } from '@mui/material/colors'
-// import Navbar from './Navbar'
-// import axios from 'axios';
-// import { useState,useEffect } from 'react'
-// import { useForm } from 'react-hook-form'
-// import toast, { Toaster } from 'react-hot-toast';
-// import { useNavigate } from "react-router-dom";
-import {Grid} from '@mui/material'
-import {Paper} from '@mui/material'
-// import background from './images/background.jpg'
-import './Login.css'
+import React, { useState } from 'react';
+import './Login.css';
 
 const Login = () => {
-   
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform login logic here
+    console.log('Login submitted');
+    console.log('Email:', email);
+    console.log('Password:', password);
+  };
+
   return (
-    <div  >
-   
+    <div className="container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <h2 className='a1'>LOGIN</h2>
+        <div className="form-group">
+          <label>Email:</label>
+          <input className="animated-input"
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={handleEmailChange}
+            
+          />
+        </div>
+        <div className="form-group">
+          <label>Password:</label>
+          <input
+            type="password"
+            placeholder="Enter password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <button type="submit" >Login</button>
+      </form>
+    </div>
+  );
+};
 
-  <div className='a1'>
- <br></br>
- <br></br>
- <br></br>
- <br></br>
- <br></br>
- <br></br>
- <br></br>
- <br></br>
- <br></br>
- <br></br>
-
-   <h1 className='ll'>LOGIN</h1>  
-  <TextField  className='textfield' label="Email" variant="outlined" name='userEmail'/>
-  {/* {...register('userEmail')} */}
-<br></br><br></br>
-  <TextField className='textfield' id="outlined-basic" label="Password" variant="outlined" type='password' name='userPassword'
-//  {...register('userPassword')} 
-/><br></br><br></br><br></br><br></br>
-   <Button className='id' variant='text'>Forgot password?</Button><br></br>
-  <Button className='tl' variant="contained">Login</Button><br></br>
-  </div>
- 
- 
-  
-  </div>
-  )
-}
-
-export default Login
+export default Login;

@@ -1,7 +1,68 @@
-.a1{
-    display: grid;
-    place-items: centers;
-    padding-left: 40vw;
-    padding-right: 40vw;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 
-}
+
+
+  }
+  
+  .login-form {
+    width: 300px;
+    padding: 20px;
+    /* border: 1px solid #ccc;
+    border-radius: 4px; */
+    display: flex;
+    flex-direction: column;
+    background-image: url("./photos/PNG_transparency_demonstration_1.png");
+background-repeat: no-repeat;
+  }
+  
+  .login-form h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    outline: none;
+  }
+  
+  button[type='submit'] {
+    background-color:#ffffff;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 13px;
+    margin-top: 15px;
+  }
+  
+  button[type='submit']:hover {
+    background-color: rgb(0, 191, 255);
+    color: #ffffff;
+  
+  }
+  .a1{
+text-align: center;
+color: white;
+  }
+  
+
+  @media screen and (max-width: 480px) {
+    .login-form {
+      width: 90%;
+    }
+  }
